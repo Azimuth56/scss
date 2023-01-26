@@ -1,0 +1,80 @@
+$couleurTitre: #ff0000;
+$couleurVisite : green;
+
+
+
+// mixin ombre avec décalage vers la gauche de 10px, un flou de 5px et une ombre de couleur rouge
+@mixin ombre($arg1:$dec,$arg2:$flou){
+    box-shadow: $arg1 $arg1*-1 $arg2 red;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: $couleurTitre;
+    width: 500px;
+    text-align: center;
+    @include ombre(10px, 10px, 5px, red);
+}
+
+// customisation des liens
+a{
+    // & permet de cibler le parent sinon il y aura un espace entre a et :link...
+    &:link {
+        color:  blueviolet;
+    }
+    &:visited{
+        color: $couleurVisite;
+    }
+    &:hover{
+        color: rebeccapurple;
+    }
+    &:active{
+        color: #000;
+    }
+
+}
+
+$tablette : "screen and (max-width: 960px)";
+$mobile : "screen and (max-width: 680px)";
+
+h1{
+    font:{
+        family: Arial;
+        size: 3em;
+        weight: bold;
+    }
+    // media query
+    // on met un # devant le nom de la variable pour la cibler
+    @media #{$tablette}{
+        font:{
+            size: 2em;
+            weight:normal;
+        }
+        color:blue;
+    }
+}
+
+@mixin contour{
+    border: 1px solid black;
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+}
+
+article{
+    @include contour;
+}
+
+@mixin posit-f($arg){
+    float: $arg;
+    margin:5px;
+    #{$arg}: 10px;
+}
+
+img{
+    @include posit-f(left);
+}
+

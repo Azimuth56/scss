@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #ff0000;
+  width: 500px;
+  text-align: center;
+  box-shadow: 10px 10px 5px red;
+}
+
+a:link {
+  color: blueviolet;
+}
+a:visited {
+  color: green;
+}
+a:hover {
+  color: rebeccapurple;
+}
+a:active {
+  color: #000;
+}
+
+h1 {
+  font-family: Arial;
+  font-size: 3em;
+  font-weight: bold;
+}
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 2em;
+    font-weight: normal;
+    color: blue;
+  }
+}
+
+article {
+  border: 1px solid black;
+  margin: 10px 5px 10px 5px;
+  padding: 10px;
+}
+
+img {
+  float: left;
+  margin: 5px;
+  left: 10px;
+}/*# sourceMappingURL=style.css.map */
