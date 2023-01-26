@@ -78,3 +78,9 @@ img{
     @include posit-f(left);
 }
 
+button{
+    border-radius: 10px 10px 10px 0px;
+    padding: 100px;
+}
+
+// extension placeholder
